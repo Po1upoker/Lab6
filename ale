@@ -1,0 +1,43 @@
+3) / # uname -a
+Linux kakto 6.1.81-0-lts #1-Alpine SMP PREEMPT_DYNAMIC Fri, 08 Mar 2024 07:45:08 +0000 x86_64 Linux
+
+cat /proc/cpuinfo - инфа о цп
+
+nproc -инфа о кол-ве ядер
+
+4) / # mpstat 3 10 | awk 'BEGIN{sum=0}{sum += $12}END{print "Average context switch
+es per second: " sum/10}'
+Average context switches per second: 0
+
+5)kakto:/# uptime
+ 16:45:47 up  3:59,  0 users,  load average: 0.05, 0.01, 0.00
+
+6)
+kakto:/# free -h
+              total        used        free      shared  buff/cache   available
+Mem:           4.6G       97.9M        4.4G      128.0K      114.0M        4.4G
+Swap:          2.0G           0        2.0G
+
+7)kakto:/# free -h
+              total        used        free      shared  buff/cache   available
+Mem:           4.6G       97.9M        4.4G      128.0K      114.0M        4.4G
+Swap:          2.0G           0        2.0G
+kakto:/# df -h
+Filesystem                Size      Used Available Use% Mounted on
+devtmpfs                 10.0M         0     10.0M   0% /dev
+shm                       2.3G         0      2.3G   0% /dev/shm
+/dev/sda3                 5.5G    208.0M      5.0G   4% /
+tmpfs                   950.9M    128.0K    950.8M   0% /run
+/dev/sda1               271.1M     29.5M    222.6M  12% /boot
+tmpfs                     2.3G         0      2.3G   0% /tmp
+
+8)du -sh ~
+
+9) EDITOR=nano crontab -e
+
+10)*/3 * * * * tar -cvf ~/memory/stat_$(date +\%Y\%m\%d_\%H\%M\%S).tar ~/memory/stat - zadanie
+
+11)crontab -r
+
+
+
